@@ -1,0 +1,1761 @@
+{
+	"info": {
+		"_postman_id": "b484b922-7567-440e-b77c-e75020e1587a",
+		"name": "HealthChecks-UAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RC-Dataservice-VIP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "UATSUPP0RT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "WHAUGHEY",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"value": "GROUP",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://webservices.uat.csc.local/rc-dataservice/health",
+					"protocol": "https",
+					"host": [
+						"webservices",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"rc-dataservice",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-UAT -gateway",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"tlsDisabledProtocols": [
+					"SSLv2",
+					"SSLv3",
+					"TLSv1",
+					"TLSv1_1"
+				]
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "UATSUPP0RT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "WHAUGHEY",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "apikey",
+						"type": "text",
+						"value": "l7xx4530e626a0094cb5bfda91fe21477e8c"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"type": "text",
+						"value": "GROUP"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://apis-uat.cscglobal.com/entity/rc-dataservice/v1/health",
+					"protocol": "https",
+					"host": [
+						"apis-uat",
+						"cscglobal",
+						"com"
+					],
+					"path": [
+						"entity",
+						"rc-dataservice",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-08",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "UATSUPP0RT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "WHAUGHEY",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"type": "text",
+						"value": "GROUP"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem08.wil.csc.local:18080/rc-dataservice/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem08",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "18080",
+					"path": [
+						"rc-dataservice",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-07",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "UATSUPP0RT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "WHAUGHEY",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"type": "text",
+						"value": "GROUP"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem07.wil.csc.local:18080/rc-dataservice/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem07",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "18080",
+					"path": [
+						"rc-dataservice",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-09",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "UATSUPP0RT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "WHAUGHEY",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"type": "text",
+						"value": "GROUP"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem09.wil.csc.local:18080/rc-dataservice/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem09",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "18080",
+					"path": [
+						"rc-dataservice",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-10",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "UATSUPP0RT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "WHAUGHEY",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"value": "GROUP",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem10.wil.csc.local:18080/rc-dataservice/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem10",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "18080",
+					"path": [
+						"rc-dataservice",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMAPI Health Check- UAT - VIP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"var jsonData = pm.response.json();",
+							"if(jsonData !== null){",
+							"",
+							"pm.test(\"DM API is up\", function(){",
+							"    pm.expect(jsonData.info.status).to.equal('UP');",
+							"})",
+							"",
+							"pm.test(\"Disk space is within threshold\", function(){",
+							"    pm.expect(jsonData.diskSpace.status).to.equal('UP');",
+							"})",
+							"",
+							"}",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw",
+						"type": "text"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://emdmapi.uat.csc.local/entitydocument/v1/health",
+					"protocol": "http",
+					"host": [
+						"emdmapi",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"entitydocument",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMAPI Health Check- UAT - 13",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw",
+						"type": "text"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem13.wil.csc.local:18080/entitydocument/v1/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem13",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "18080",
+					"path": [
+						"entitydocument",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMAPI Health Check- UAT - 14",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw",
+						"type": "text"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem14.wil.csc.local:18080/entitydocument/v1/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem14",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "18080",
+					"path": [
+						"entitydocument",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity SIA Health - UAT - VIP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Application is UP\", function(){",
+							"    pm.expect(jsonData.status).to.equal(\"UP\");",
+							"});",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://webservices.uat.csc.local/entitysearch/v1/health",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"entitysearch",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity SIA Health - UAT - 18",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Application is UP\", function(){",
+							"    pm.expect(jsonData.status).to.equal(\"UP\");",
+							"});",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem18.wil.csc.local:18080/entitysearch/v1/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem18",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "18080",
+					"path": [
+						"entitysearch",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity SIA Health - UAT - 19",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Application is UP\", function(){",
+							"    pm.expect(jsonData.status).to.equal(\"UP\");",
+							"});",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem19.wil.csc.local:18080/entitysearch/v1/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem19",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "18080",
+					"path": [
+						"entitysearch",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrgChart API Gateway - liveness",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "l7xx4530e626a0094cb5bfda91fe21477e8c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apis-uat.cscglobal.com/entity/api-orgcharts/v1/liveness",
+					"protocol": "https",
+					"host": [
+						"apis-uat",
+						"cscglobal",
+						"com"
+					],
+					"path": [
+						"entity",
+						"api-orgcharts",
+						"v1",
+						"liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DocServices - VIP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservices.uat.csc.local/docServices/services/DocumentServicesService?wsdl",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"docServices",
+						"services",
+						"DocumentServicesService"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DocServices - 03",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://uldocbase03.wil.csc.local:11080/docServices/services/DocumentServicesService?wsdl",
+					"protocol": "http",
+					"host": [
+						"uldocbase03",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "11080",
+					"path": [
+						"docServices",
+						"services",
+						"DocumentServicesService"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DocServices - 04",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://uldocbase04.wil.csc.local:11080/docServices/services/DocumentServicesService?wsdl",
+					"protocol": "http",
+					"host": [
+						"uldocbase04",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "11080",
+					"path": [
+						"docServices",
+						"services",
+						"DocumentServicesService"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DocRest - VIP - get Home repositories health check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZW1hZG1pbjo0djNWRVlkYw==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://docrest.uat.csc.local/doc-rest/repositories/EM_DOCBASE_UAT",
+					"protocol": "https",
+					"host": [
+						"docrest",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"doc-rest",
+						"repositories",
+						"EM_DOCBASE_UAT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rc-batchadmin \"liveness\" check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": []
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://rc-batchadmin.ingress.uat.csc.local/rc-batchadmin/liveness",
+					"protocol": "http",
+					"host": [
+						"rc-batchadmin",
+						"ingress",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"rc-batchadmin",
+						"liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rule engine health check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": [
+					"SSLv2",
+					"SSLv3",
+					"TLSv1",
+					"TLSv1_1",
+					"TLSv1_2"
+				]
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api-emr.ingress.uat.csc.local/api-emr/readiness",
+					"protocol": "http",
+					"host": [
+						"api-emr",
+						"ingress",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"api-emr",
+						"readiness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EPEE - DS-UAT - gateway",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": [
+					"TLSv1_1",
+					"TLSv1",
+					"SSLv3",
+					"SSLv2"
+				]
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "apikey",
+						"type": "text",
+						"value": "l7xx4530e626a0094cb5bfda91fe21477e8c"
+					}
+				],
+				"url": {
+					"raw": "https://apis-uat.cscglobal.com/entity/ee-dataservice/v1/rest/hello/URLMonitor/results",
+					"protocol": "https",
+					"host": [
+						"apis-uat",
+						"cscglobal",
+						"com"
+					],
+					"path": [
+						"entity",
+						"ee-dataservice",
+						"v1",
+						"rest",
+						"hello",
+						"URLMonitor",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EPEE - Transformer - RHOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": [
+					"TLSv1_1",
+					"TLSv1",
+					"SSLv3",
+					"SSLv2"
+				]
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "apikey",
+						"type": "text",
+						"value": "l7xx4530e626a0094cb5bfda91fe21477e8c"
+					}
+				],
+				"url": {
+					"raw": "http://epee-transformer.ingress.uat.csc.local/epee-transformer/readiness",
+					"protocol": "http",
+					"host": [
+						"epee-transformer",
+						"ingress",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"epee-transformer",
+						"readiness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scheduler Health - VIP - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"pm.test(\"Response includes expected base resource\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"createEventInstance\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api-uat.cscglobal.com/scheduler/v1/application.wadl",
+					"protocol": "http",
+					"host": [
+						"api-uat",
+						"cscglobal",
+						"com"
+					],
+					"path": [
+						"scheduler",
+						"v1",
+						"application.wadl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scheduler 01 Health",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"pm.test(\"Response includes expected base resource\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"createEventInstance\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ultcerm01.wil.csc.local:11880/scheduler/v1/application.wadl",
+					"protocol": "http",
+					"host": [
+						"ultcerm01",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "11880",
+					"path": [
+						"scheduler",
+						"v1",
+						"application.wadl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scheduler 02 Health",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"pm.test(\"Response includes expected base resource\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"createEventInstance\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://ultcerm02.wil.csc.local:11880/scheduler/v1/application.wadl",
+					"protocol": "http",
+					"host": [
+						"ultcerm02",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "11880",
+					"path": [
+						"scheduler",
+						"v1",
+						"application.wadl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MenuService Status - uat - OpenShift",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://menu-service.ingress.uat.csc.local/menu-service/rest/health/readiness",
+					"protocol": "http",
+					"host": [
+						"menu-service",
+						"ingress",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"menu-service",
+						"rest",
+						"health",
+						"readiness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BO transformer \"liveness\" check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": []
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bo-transport.ingress.uat.csc.local/bo-transport/liveness",
+					"protocol": "http",
+					"host": [
+						"bo-transport",
+						"ingress",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"bo-transport",
+						"liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity Message Clinic Health - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code ===200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Application is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://emmclinic.uat.csc.local/entityclinic/health",
+					"protocol": "http",
+					"host": [
+						"emmclinic",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"entityclinic",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity API Health Check - VIP - IT Admin user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"",
+							"var jsonData = pm.response.json();",
+							"tests[\"Application is UP\"] = jsonData.status === \"UP\";",
+							"tests[\"API status returned; status is UP\"] = jsonData.status === \"UP\";",
+							"tests[\"Current build branch & version returned\"] = jsonData.info.build.version !== null;",
+							"tests[\"Disk space value returned\"] = jsonData.diskSpace.directories[0].freeSpace !== null; ",
+							"tests[\"Oracle transactional database info returned\"]  = jsonData.db.dataSource.status === \"UP\";",
+							"tests[\"Data warehouse info returned\"]  = jsonData.db.datawarehouseDatasource.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Uatsupp0rt@3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IJANE1",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-uat.cscglobal.com/entity/v1/health",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"cscglobal",
+						"com"
+					],
+					"path": [
+						"entity",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity API- Health check - 20 Server - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"if(responseCode.code === 200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"API status returned; status is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic SUpBTkUxOlVhdHN1cHAwcnRAMw=="
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem20.wil.csc.local:16680/entity/v1/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem20",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "16680",
+					"path": [
+						"entity",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity API - Health Check - 21 Server - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(responseCode.code === 200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"API status returned; status is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic SUpBTkUxOlVhdHN1cHAwcnRAMw=="
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem21.wil.csc.local:16680/entity/v1/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem21",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "16680",
+					"path": [
+						"entity",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity Messaging - 11 - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"if(responseCode.code === 200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Application is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem11.wil.csc.local:13480/msg-coarse-transformer/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem11",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "13480",
+					"path": [
+						"msg-coarse-transformer",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity Messaging - 12- UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"if(responseCode.code === 200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Application is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://ultcclsem12.wil.csc.local:13480/msg-coarse-transformer/health",
+					"protocol": "http",
+					"host": [
+						"ultcclsem12",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "13480",
+					"path": [
+						"msg-coarse-transformer",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
