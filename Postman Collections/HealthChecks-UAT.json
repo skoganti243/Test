@@ -11,8 +11,9 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "625a1bd3-3581-4d00-a783-7a612315977b",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
+							"pm.test(\"Status code is 200-updatesnew\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
@@ -22,8 +23,7 @@
 							"    });",
 							"}"
 						],
-						"type": "text/javascript",
-						"id": "625a1bd3-3581-4d00-a783-7a612315977b"
+						"type": "text/javascript"
 					}
 				}
 			],
