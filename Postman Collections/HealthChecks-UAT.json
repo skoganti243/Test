@@ -1,0 +1,1382 @@
+{
+	"info": {
+		"_postman_id": "427084c1-86c0-4cf2-9369-4b66445605b2",
+		"name": "HealthChecks-UAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RC-Dataservice-VIP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "625a1bd3-3581-4d00-a783-7a612315977b"
+					}
+				}
+			],
+			"_postman_id": "bc3a97ee-3e7d-4bac-a516-17edb27b9dce",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "UATSUPP0RT",
+						"username": "WHAUGHEY",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"value": "GROUP",
+						"type": "text"
+					}
+				],
+				"url": "https://webservices.uat.csc.local/rc-dataservice/health"
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-UAT -gateway",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "6382fab5-369f-4734-be54-8be99c81fd8c"
+					}
+				}
+			],
+			"_postman_id": "f78a9d94-b954-47e4-a00d-4c29626b0e91",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"tlsDisabledProtocols": [
+					"SSLv2",
+					"SSLv3",
+					"TLSv1",
+					"TLSv1_1"
+				]
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "UATSUPP0RT",
+						"username": "WHAUGHEY",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "apikey",
+						"type": "text",
+						"value": "l7xx4530e626a0094cb5bfda91fe21477e8c"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"type": "text",
+						"value": "GROUP"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {}
+				},
+				"url": "https://apis-uat.cscglobal.com/entity/rc-dataservice/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-08",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "a9640d3c-061e-43a9-b0eb-a88bd043bebb"
+					}
+				}
+			],
+			"_postman_id": "48f040c5-219d-4d1e-b7a2-ec8d41a1e8da",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "UATSUPP0RT",
+						"username": "WHAUGHEY",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"type": "text",
+						"value": "GROUP"
+					}
+				],
+				"url": "http://ultcclsem08.wil.csc.local:18080/rc-dataservice/health"
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-07",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "212b4f53-d853-4970-b2d0-fe8b61e66077"
+					}
+				}
+			],
+			"_postman_id": "470a1bc9-5bda-416d-adc6-64cdd5984d9e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "UATSUPP0RT",
+						"username": "WHAUGHEY",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"type": "text",
+						"value": "GROUP"
+					}
+				],
+				"url": "http://ultcclsem07.wil.csc.local:18080/rc-dataservice/health"
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-09",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "0544776d-ec36-498f-ad1d-bdb6d3ae045b"
+					}
+				}
+			],
+			"_postman_id": "2d476135-2f01-42ef-b434-c5b288634011",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "UATSUPP0RT",
+						"username": "WHAUGHEY",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"type": "text",
+						"value": "GROUP"
+					}
+				],
+				"url": "http://ultcclsem09.wil.csc.local:18080/rc-dataservice/health"
+			},
+			"response": []
+		},
+		{
+			"name": "RC-Dataservice-10",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7a1f514-2c53-410c-90df-d6d4994cba7b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"    pm.test(\"Status is up - HR onboard change\", function(){",
+							"        pm.expect(pm.response.json().status).to.equal(\"UP\");",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "b59d55e7-2ea1-4a7b-96c1-1b832e41f985",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "UATSUPP0RT",
+						"username": "WHAUGHEY",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "groupId",
+						"value": "A298336"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "orgType",
+						"value": "GROUP",
+						"type": "text"
+					}
+				],
+				"url": "http://ultcclsem10.wil.csc.local:18080/rc-dataservice/health"
+			},
+			"response": []
+		},
+		{
+			"name": "DMAPI Health Check- UAT - VIP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"var jsonData = pm.response.json();",
+							"if(jsonData !== null){",
+							"",
+							"pm.test(\"DM API is up\", function(){",
+							"    pm.expect(jsonData.info.status).to.equal('UP');",
+							"})",
+							"",
+							"pm.test(\"Disk space is within threshold\", function(){",
+							"    pm.expect(jsonData.diskSpace.status).to.equal('UP');",
+							"})",
+							"",
+							"}",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "c101d5f3-b65f-4873-95fa-c17b11b030eb"
+					}
+				}
+			],
+			"_postman_id": "1a0e3273-86ef-4b90-8b09-484739414262",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw",
+						"type": "text"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": "http://emdmapi.uat.csc.local/entitydocument/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "DMAPI Health Check- UAT - 13",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "d40256c1-05ef-43e9-93d1-1b620deb8e66"
+					}
+				}
+			],
+			"_postman_id": "3e977db7-df7d-4f18-a88d-81ba591ea6f9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw",
+						"type": "text"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": "http://ultcclsem13.wil.csc.local:18080/entitydocument/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "DMAPI Health Check- UAT - 14",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "92d31ba7-6c9a-4bc6-afd3-58ccf1dcc490"
+					}
+				}
+			],
+			"_postman_id": "c16d58a2-264b-474f-8c47-38a2351ec80a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw",
+						"type": "text"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": "http://ultcclsem14.wil.csc.local:18080/entitydocument/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity SIA Health - UAT - VIP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Application is UP\", function(){",
+							"    pm.expect(jsonData.status).to.equal(\"UP\");",
+							"});",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "dc721eb0-7952-40fa-a9fa-7573ffcdb62f"
+					}
+				}
+			],
+			"_postman_id": "9de94f28-c6cd-4236-a524-6d4d70d5fa10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": "http://webservices.uat.csc.local/entitysearch/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity SIA Health - UAT - 18",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Application is UP\", function(){",
+							"    pm.expect(jsonData.status).to.equal(\"UP\");",
+							"});",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "a1274d82-cda3-41d7-a901-c0cfcca83d2c"
+					}
+				}
+			],
+			"_postman_id": "8f763e35-45fa-4067-90d6-443f7c58ad90",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": "http://ultcclsem18.wil.csc.local:18080/entitysearch/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity SIA Health - UAT - 19",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Application is UP\", function(){",
+							"    pm.expect(jsonData.status).to.equal(\"UP\");",
+							"});",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "c5815c77-f7d8-4321-9525-7a2b13438a62"
+					}
+				}
+			],
+			"_postman_id": "0fcd4766-d2dc-4e18-834f-23560fd113ea",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic X19lbnRpdHlfdHJ1c3RlZF9zZXJ2aWNlX3VzZXI6a2RBRDluTjc4WDhqa0hWR3JmanQ4aktw"
+					},
+					{
+						"key": "CSC_REST_USERNAME",
+						"value": "IJANE1",
+						"type": "text"
+					}
+				],
+				"url": "http://ultcclsem19.wil.csc.local:18080/entitysearch/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "OrgChart API Gateway - liveness",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "c74823a4-15fc-4e21-9a46-94ef145b692e"
+					}
+				}
+			],
+			"_postman_id": "3ef95195-3a34-459e-9f52-5987fdb8c00b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "l7xx4530e626a0094cb5bfda91fe21477e8c",
+						"type": "text"
+					}
+				],
+				"url": "https://apis-uat.cscglobal.com/entity/api-orgcharts/v1/liveness"
+			},
+			"response": []
+		},
+		{
+			"name": "DocServices - VIP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "5b10dd90-bc8b-491e-8137-ad1e6159c3f7"
+					}
+				}
+			],
+			"_postman_id": "39e273fb-66ab-41cc-9386-cad1b9d00875",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservices.uat.csc.local/docServices/services/DocumentServicesService?wsdl",
+					"protocol": "http",
+					"host": [
+						"webservices",
+						"uat",
+						"csc",
+						"local"
+					],
+					"path": [
+						"docServices",
+						"services",
+						"DocumentServicesService"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DocServices - 03",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "b0505006-7267-418b-9b86-8cdb8474df58"
+					}
+				}
+			],
+			"_postman_id": "7d7ad160-f771-48a1-af16-3e2b44d7618e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://uldocbase03.wil.csc.local:11080/docServices/services/DocumentServicesService?wsdl",
+					"protocol": "http",
+					"host": [
+						"uldocbase03",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "11080",
+					"path": [
+						"docServices",
+						"services",
+						"DocumentServicesService"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DocServices - 04",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "fdd6cb17-4290-481e-b757-41b0f9055406"
+					}
+				}
+			],
+			"_postman_id": "b8d0fc04-8f78-451c-849f-e557eb0bb9de",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://uldocbase04.wil.csc.local:11080/docServices/services/DocumentServicesService?wsdl",
+					"protocol": "http",
+					"host": [
+						"uldocbase04",
+						"wil",
+						"csc",
+						"local"
+					],
+					"port": "11080",
+					"path": [
+						"docServices",
+						"services",
+						"DocumentServicesService"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DocRest - VIP - get Home repositories health check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "c3820d0b-ce2e-4915-a47b-bc100f53ee67"
+					}
+				}
+			],
+			"_postman_id": "50df129b-9b02-4d45-ab9f-e130786d3049",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZW1hZG1pbjo0djNWRVlkYw==",
+						"type": "text"
+					}
+				],
+				"url": "https://docrest.uat.csc.local/doc-rest/repositories/EM_DOCBASE_UAT"
+			},
+			"response": []
+		},
+		{
+			"name": "Rc-batchadmin \"liveness\" check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "a747234d-03c4-4e40-af81-2f75c7476455"
+					}
+				}
+			],
+			"_postman_id": "ba42035d-10d4-48f4-a00c-706353eab015",
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": [],
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://rc-batchadmin.ingress.uat.csc.local/rc-batchadmin/liveness"
+			},
+			"response": []
+		},
+		{
+			"name": "Rule engine health check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "ffb782a0-89ce-4978-9e1c-e6188ddb84d5"
+					}
+				}
+			],
+			"_postman_id": "e04d9366-8df1-403a-8996-91c413f2eebe",
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": [
+					"SSLv2",
+					"SSLv3",
+					"TLSv1",
+					"TLSv1_1",
+					"TLSv1_2"
+				],
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://api-emr.ingress.uat.csc.local/api-emr/readiness"
+			},
+			"response": []
+		},
+		{
+			"name": "EPEE - DS-UAT - gateway",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "b1a2b092-b737-4ccc-85e1-68809893e1e0"
+					}
+				}
+			],
+			"_postman_id": "b2c33b5d-f6ac-466d-b0ff-88d86ab9e3f5",
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": [
+					"TLSv1_1",
+					"TLSv1",
+					"SSLv3",
+					"SSLv2"
+				],
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "apikey",
+						"type": "text",
+						"value": "l7xx4530e626a0094cb5bfda91fe21477e8c"
+					}
+				],
+				"url": "https://apis-uat.cscglobal.com/entity/ee-dataservice/v1/rest/hello/URLMonitor/results"
+			},
+			"response": []
+		},
+		{
+			"name": "EPEE - Transformer - RHOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "0d89edcd-39f9-4115-8d95-341b861f1974"
+					}
+				}
+			],
+			"_postman_id": "3199255e-b312-4cb2-8812-653b1534b128",
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": [
+					"TLSv1_1",
+					"TLSv1",
+					"SSLv3",
+					"SSLv2"
+				],
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "apikey",
+						"type": "text",
+						"value": "l7xx4530e626a0094cb5bfda91fe21477e8c"
+					}
+				],
+				"url": "http://epee-transformer.ingress.uat.csc.local/epee-transformer/readiness"
+			},
+			"response": []
+		},
+		{
+			"name": "Scheduler Health - VIP - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"pm.test(\"Response includes expected base resource\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"createEventInstance\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "fe162018-15e5-41ea-8c7b-6eb6dce79bbb"
+					}
+				}
+			],
+			"_postman_id": "8d91e836-a1bd-4d4b-976a-5ea2122e82c4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://api-uat.cscglobal.com/scheduler/v1/application.wadl"
+			},
+			"response": []
+		},
+		{
+			"name": "Scheduler 01 Health",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"pm.test(\"Response includes expected base resource\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"createEventInstance\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "6aefe79b-ebe6-4f99-a23b-a683e3fba941"
+					}
+				}
+			],
+			"_postman_id": "e7e97f62-7810-477c-a62f-00bcff94152d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://ultcerm01.wil.csc.local:11880/scheduler/v1/application.wadl"
+			},
+			"response": []
+		},
+		{
+			"name": "Scheduler 02 Health",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"pm.test(\"Response includes expected base resource\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"createEventInstance\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "431becb5-dc39-4384-b27c-479cfb54ce6d"
+					}
+				}
+			],
+			"_postman_id": "b8440f77-a844-4baf-be95-438e25e70c31",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": ""
+					}
+				],
+				"url": "http://ultcerm02.wil.csc.local:11880/scheduler/v1/application.wadl"
+			},
+			"response": []
+		},
+		{
+			"name": "MenuService Status - uat - OpenShift",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "15346dba-6545-4276-8d53-e3878a5e32c2"
+					}
+				}
+			],
+			"_postman_id": "8c184d41-7149-4a78-b738-15956de7a77b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://menu-service.ingress.uat.csc.local/menu-service/rest/health/readiness"
+			},
+			"response": []
+		},
+		{
+			"name": "BO transformer \"liveness\" check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "6688a1b9-7173-48c7-a4da-59427bba5a61"
+					}
+				}
+			],
+			"_postman_id": "93a95d7a-c2fe-4f07-ae4e-d00dcded1a68",
+			"protocolProfileBehavior": {
+				"tlsDisabledProtocols": [],
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://bo-transport.ingress.uat.csc.local/bo-transport/liveness"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity Message Clinic Health - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code ===200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Application is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "bab1154c-4f7d-474c-aacf-c3cdb2f2859a"
+					}
+				}
+			],
+			"_postman_id": "f3ba5a46-931e-4c89-9fc0-0a27b3615b4f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": "http://emmclinic.uat.csc.local/entityclinic/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity API Health Check - VIP - IT Admin user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(pm.response.code === 200){",
+							"",
+							"var jsonData = pm.response.json();",
+							"tests[\"Application is UP\"] = jsonData.status === \"UP\";",
+							"tests[\"API status returned; status is UP\"] = jsonData.status === \"UP\";",
+							"tests[\"Current build branch & version returned\"] = jsonData.info.build.version !== null;",
+							"tests[\"Disk space value returned\"] = jsonData.diskSpace.directories[0].freeSpace !== null; ",
+							"tests[\"Oracle transactional database info returned\"]  = jsonData.db.dataSource.status === \"UP\";",
+							"tests[\"Data warehouse info returned\"]  = jsonData.db.datawarehouseDatasource.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "f3afc7bc-ed5e-41d6-88a4-36ac5c4a1351"
+					}
+				}
+			],
+			"_postman_id": "e4771f39-a94e-4947-ab7b-821f44327445",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "Uatsupp0rt@3",
+						"username": "IJANE1",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://api-uat.cscglobal.com/entity/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity API- Health check - 20 Server - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"if(responseCode.code === 200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"API status returned; status is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "1f8f3dd1-4ecc-470a-8b2c-720cfb670dad"
+					}
+				}
+			],
+			"_postman_id": "836c1b3d-298f-43b3-a97e-76893a248897",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic SUpBTkUxOlVhdHN1cHAwcnRAMw=="
+					}
+				],
+				"url": "http://ultcclsem20.wil.csc.local:16680/entity/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity API - Health Check - 21 Server - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if(responseCode.code === 200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"API status returned; status is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "09af48e7-0664-4880-b1dc-fa4a8a0fe6f6"
+					}
+				}
+			],
+			"_postman_id": "096bbe5e-1d78-4b33-ba34-98d85056bb7d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic SUpBTkUxOlVhdHN1cHAwcnRAMw=="
+					}
+				],
+				"url": "http://ultcclsem21.wil.csc.local:16680/entity/v1/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity Messaging - 11 - UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"if(responseCode.code === 200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Application is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "6216f9c5-a288-49d2-a098-10fb5c391e76"
+					}
+				}
+			],
+			"_postman_id": "ab46823d-5f6c-4644-b63a-35fadb4463b6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": "http://ultcclsem11.wil.csc.local:13480/msg-coarse-transformer/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Entity Messaging - 12- UAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"if(responseCode.code === 200){",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Application is UP\"] = jsonData.status === \"UP\";",
+							"}"
+						],
+						"type": "text/javascript",
+						"id": "21c49f77-41f9-477d-9f51-2a2454f12fc2"
+					}
+				}
+			],
+			"_postman_id": "37457cd0-f1d0-4fcb-94c4-b3c69c5987d3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": "http://ultcclsem12.wil.csc.local:13480/msg-coarse-transformer/health"
+			},
+			"response": []
+		}
+	]
+}
